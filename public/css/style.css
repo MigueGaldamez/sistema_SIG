@@ -1,0 +1,15 @@
+.barralateral{
+    background-color: #1e293b;
+    color:#FFFF !important; 
+}
+.barralateral a{
+    color:#FFFF !important; 
+}
+.barralateral a:hover{
+    background-color:#164e63;
+    color:#FFFF !important; 
+    text-decoration: none;
+}
+.perfilsidebar{
+    background-color:#164e63;
+}
