@@ -10,6 +10,11 @@
     color:#FFFF !important; 
     text-decoration: none;
 }
+.barralateral .activo{
+    background-color:#164e63;
+    color:#FFFF !important; 
+    text-decoration: none;
+}
 .perfilsidebar{
     background-color:#164e63;
 }
