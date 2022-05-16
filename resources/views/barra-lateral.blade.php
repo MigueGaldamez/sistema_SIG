@@ -11,7 +11,7 @@
             </a>
         </div>
 		<div class="w-full px-2">
-            <h5 class="mt-3 mb-0">Reportes Estrategicos</h5>
+            <h5 class="mt-3 mb-0"><a href="{{route('menu.e')}}">Reportes Estrategicos<a></h5>
 			<div class="flex flex-col items-center w-full mt-2 border-t border-gray-300">
 				<a class="{{(request()->routeIs('estrategicos.uno'))? 'activo ':''}}flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-300" href="{{route('estrategicos.uno')}}">
                     <svg class="w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
@@ -28,7 +28,7 @@
 				
 			
 			</div>
-            <h5 class="mt-3 mb-0">Reportes Tacticos</h5>
+            <h5 class="mt-3 mb-0"><a href="{{route('menu.t')}}">Reportes Tacticos<a></h5>
 
 			<div class="flex flex-col items-center w-full mt-2 border-t border-gray-300">
 				<a class="{{(request()->routeIs('tacticos.uno'))? 'activo ':''}}flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-300" href="{{route('tacticos.uno')}}">

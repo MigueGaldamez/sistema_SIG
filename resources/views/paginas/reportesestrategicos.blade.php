@@ -1,11 +1,39 @@
 <x-app-layout>
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                <h4>Reportes Estrategicos</h4>
+    <div class="py-3">
+        <div class="max-w-7xl mx-auto sm:px-1 lg:px-1">
+            <div class="overflow-hidden  sm:rounded-lg">
+               <div class="pb-4 pt-4 sm:px-20  border-gray-200 ">
+                <h2>Reportes Estrategicos</h2>
+                <div class="row">
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-body">
+                                   <span>Cantidad de servicios sociales que han sido finalizados ordenados por su tipo mostrando la cantidad de alumnos que participaron en el servicio social.</span>
+                                   <br><a href="{{route('estrategicos.uno')}}">Ver reporte</a>
+                                    <div class="text-center">
+                                    <img  class="mx-auto" src="{{asset('iconos/crecimiento (2).png')}}" style="height:200px;">
+                                </div>
+                            </div>
+                        </div>
+                     
+                    </div>
+                      <div class="col">
+                        <div class="card">
+                            <div class="card-body">
+                                <span>Cantidad de alumnos que han terminado en su totalidad las horas mínimas (500 horas) de servicio social ordenado por sexo y filtrado por periodo.</span>
+                                <br><a href="{{route('estrategicos.dos')}}">Ver reporte</a>
+                                <div class="text-center">
+                                    <img  class="mx-auto" src="{{asset('iconos/crecimiento.png')}}" style="height:200px;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
             </div>
         </div>
     </div>
+ </div>
 </x-app-layout>
 
 

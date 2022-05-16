@@ -50,7 +50,7 @@
                     </div>
 
                     <div class="text-right">
-                        <a class="btn btn-success">Descargar PDF</a>
+                         <a class="btn btn-success"  onclick="descargarPDF()">Descargar PDF</a>
                     </div>
                 </div>
 
@@ -85,6 +85,22 @@
         document.getElementById("tipo_servicio").value=0;
         actualizarfiltros();
     }
+    
+      function descargarPDF(){
+
+        fecha_inicio = document.getElementById("fecha_inicio").value;
+        fecha_fin = document.getElementById("fecha_fin").value;
+        tipo_servicio = document.getElementById("tipo_servicio").value;
+
+        var url = '{{ route("pdf.e.uno", ['fecha_inicio'=>"afecha_inicio",'fecha_fin'=>"afecha_fin",'tipo_servicio'=>"atipo_servicio"]) }}';
+        url = url.replace('afecha_inicio', fecha_inicio);
+        url = url.replace('afecha_fin', fecha_fin);
+        url = url.replace('atipo_servicio', tipo_servicio);
+        url = url.replace(/&amp;/g, '&');
+      
+     
+        document.location.href=url;
+         }
 </script>  
 
 

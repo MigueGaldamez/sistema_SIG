@@ -97,7 +97,6 @@
         url = url.replace('afecha_fin', fecha_fin);
         url = url.replace('atipo', tipo);
         url = url.replace(/&amp;/g, '&');
-        url = url.replace(/&amp;/g, '&');
      
         document.location.href=url;
          }

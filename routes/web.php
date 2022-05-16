@@ -10,11 +10,12 @@ Route::get('/', function () {
 
 Route::get('/estrategicos', function () {
     return view('paginas.reportesestrategicos');
-});
+})->name('menu.e');
 
 Route::get('/tacticos', function () {
     return view('paginas.reportestacticos');
-});
+})->name('menu.t');
+
 Route::get('/tacticos-uno', [TacticosController::class, 'mostrarTactico1'])->name('tacticos.uno');
 Route::get('/tacticos-dos', [TacticosController::class, 'mostrarTactico2'])->name('tacticos.dos');
 Route::get('/tacticos-tres', [TacticosController::class, 'mostrarTactico3'])->name('tacticos.tres');
@@ -33,6 +34,8 @@ Route::get('/pdf-tacticos-uno', [TacticosController::class, 'pdfTactico1'])->nam
 Route::get('/pdf-tacticos-dos', [TacticosController::class, 'pdfTactico2'])->name('pdf.t.dos');
 Route::get('/pdf-tacticos-tres', [TacticosController::class, 'pdfTactico3'])->name('pdf.t.tres');
 
+Route::get('/pdf-estrategico-uno', [EstrategicosController::class, 'pdfEstrategico1'])->name('pdf.e.uno');
+Route::get('/pdf-estrategico-dos', [EstrategicosController::class, 'pdfEstrategico2'])->name('pdf.e.dos');
 
 Route::middleware([
     'auth:sanctum',

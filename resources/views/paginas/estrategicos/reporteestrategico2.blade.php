@@ -32,14 +32,12 @@
                                 <div class="mb-3">
                                     <label class="form-label">Fecha Inicio</label>
                                     <input type="date" class="form-control form-control-sm" id="fecha_inicio" aria-describedby="emailHelp">
-                                    <div id="emailHelp" class="form-text">Well never share your email with anyone else.</div>
                                 </div>
                             </div>
                                 <div class="col">
                                 <div class="mb-3">
                                     <label class="form-label">Fecha Fin</label>
                                     <input type="date" class="form-control form-control-sm" id="fecha_fin" aria-describedby="emailHelp">
-                                    <div id="emailHelp" class="form-text">Well never share your email with anyone else.</div>
                                 </div>
                             </div>
                             <div>
@@ -53,7 +51,7 @@
                     </div>
                   
                     <div class="text-right">
-                        <a class="btn btn-success">Descargar PDF</a>
+                         <a class="btn btn-success"  onclick="descargarPDF()">Descargar PDF</a>
                     </div>
                 </div>
 
@@ -85,6 +83,18 @@
         document.getElementById("fecha_inicio").value="";
         document.getElementById("fecha_fin").value="";
         actualizarfiltros();
+    }
+     function descargarPDF(){
+
+        fecha_inicio = document.getElementById("fecha_inicio").value;
+        fecha_fin = document.getElementById("fecha_fin").value;
+   
+        var url = '{{ route("pdf.e.dos", ['fecha_inicio'=>"afecha_inicio",'fecha_fin'=>"afecha_fin"]) }}';
+        url = url.replace('afecha_inicio', fecha_inicio);
+        url = url.replace('afecha_fin', fecha_fin);
+        url = url.replace(/&amp;/g, '&');
+     
+        document.location.href=url;
     }
 </script>  
 

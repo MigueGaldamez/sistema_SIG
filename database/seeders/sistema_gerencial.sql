@@ -126,8 +126,8 @@ CREATE TABLE `estudiantes_g` (
 
 INSERT INTO `estudiantes_g` (`id`, `nombre_estudiante`, `apellido_estudiante`, `carnet_estudiante`, `sexo_estudiante`, `carrera_id`, `cantidad_horas_ss`, `estado_estudiante`, `created_at`, `updated_at`) VALUES
 (1, 'Fredy', 'Martinez', 'MM16045', 'Masculino', 1, 500, 'Activo', '2021-11-28 12:17:07', '2021-11-28 12:17:07'),
-(2, 'Leo', 'Urquilla', 'UR17008', 'Masculino', 2, 500, 'Activo', '2021-11-28 12:17:07', '2021-11-28 12:17:07'),
-(3, 'Chico', 'Santana', 'SM16006', 'Masculino', 3, 500, 'Activo', '2021-11-28 12:17:07', '2021-11-28 12:17:07'),
+(2, 'Leo', 'Urquilla', 'UR17008', 'Masculino', 2, 400, 'Activo', '2021-11-28 12:17:07', '2021-11-28 12:17:07'),
+(3, 'Chico', 'Santana', 'SM16006', 'Masculino', 3, 400, 'Activo', '2021-11-28 12:17:07', '2021-11-28 12:17:07'),
 (4, 'Fransisco', 'Ganuza', 'GR18015', 'Masculino', 4, 500, 'Realizando servicio', '2021-11-28 12:17:07', '2021-11-28 12:17:07'),
 (5, 'Stefany', 'Ruiz', 'RR16003', 'Femenino', 5, 500, 'Activo', '2021-11-28 12:17:07', '2021-11-28 12:17:07'),
 (6, 'Carlos', 'Gutierrez', 'CG12025', 'Masculino', 4, 500, 'Realizando servicio', '2021-11-28 13:45:29', '2021-11-28 13:48:37');
