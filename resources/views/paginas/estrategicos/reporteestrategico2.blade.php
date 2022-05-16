@@ -43,8 +43,8 @@
                                 </div>
                             </div>
                             <div>
-                              <a class="btn btn-primary" onclick="actualizarfiltros()">Aplicar filtro</a>
-                                   <a class="btn btn-info" onclick="limpiarfiltros()">limpiar Filtros</a>
+                                <a class="btn btn-primary" onclick="actualizarfiltros()">Aplicar filtro</a>
+                                <a class="btn btn-info" onclick="limpiarfiltros()">limpiar Filtros</a>
                             </div>
                        </div>
                     </div>

@@ -15,50 +15,93 @@
                              <div class="col">
                                 <div class="mb-3">
                                     <label class="form-label">Fecha Inicio</label>
-                                    <input type="date" class="form-control form-control-sm" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                    <input type="date" class="form-control form-control-sm" id="fecha_inicio" aria-describedby="emailHelp">
                                     <div id="emailHelp" class="form-text">Well never share your email with anyone else.</div>
                                 </div>
                             </div>
-                                <div class="col">
+                            <div class="col">
                                 <div class="mb-3">
                                     <label class="form-label">Fecha Fin</label>
-                                    <input type="date" class="form-control form-control-sm" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                    <input type="date" class="form-control form-control-sm" id="fecha_fin" aria-describedby="emailHelp">
                                     <div id="emailHelp" class="form-text">Well never share your email with anyone else.</div>
                                 </div>
                             </div>
+                             <div class="col">
+                                <div class="mb-3">
+                                    <label class="form-label">Tipo de servicio</label>
+                                    <select class="form-select form-select-sm" id="tipo" aria-label="Default select example">
+                                        <option value="0" selected>Seleccione un tipo</option>
+                                        @foreach($tipos as $tipo)
+                                        <option value={{$tipo->id}}>{{$tipo->nombre_tipo_servicio}}</option>
+                                       
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                            
                             <div>
-                                <a class="btn btn-primary">Aplicar filtro</a>
+                                <a class="btn btn-primary" onclick="actualizarfiltros()">Aplicar filtro</a>
+                                <a class="btn btn-info" onclick="limpiarfiltros()">limpiar Filtros</a>
                             </div>
                        </div>
                     </div>
-                    <h4 class="mt-3">Total de servicios activos: <b>{{$consulta2}}</b></h4>
-
-                    <table class="table table-striped">
-                        <thead class="table-dark "> 
-                            <tr>
-                            <th scope="col">Carrera</th>
-                            <th scope="col">Facultad</th>
-                             <th scope="col">Cantidad de Servicios</th>
-                            
-                          
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($consulta as $record )
-                            <tr>
-                                <td>{{$record->nombre_carrera}}</td>
-                                <td>{{$record->nombre_facultad}}</td>
-                                <td>{{$record->servicios}}</td>
-                            
-                            </tr>
-                            @endforeach         
-                        </tbody>
-                    </table>
+                      {{--aqui se muestra la tabla---}}
+                    <div class="my-4" id="tablita" name="tablita">
+                    </div>
+                     <div class="text-right">
+                       <a class="btn btn-success"  onclick="descargarPDF()">Descargar PDF</a>
+                    </div>
                 </div>
 
             </div>
         </div>
     </div>
 </x-app-layout>
+<script type="text/javascript">
+    $( document ).ready(function() {
+        actualizarfiltros();
+    });
+
+    function actualizarfiltros(){
+       
+        fecha_inicio = document.getElementById("fecha_inicio").value;
+        fecha_fin = document.getElementById("fecha_fin").value;
+        tipo = document.getElementById("tipo").value;
+   
+        var url = '{{ route("filtrar.t.tres", ['fecha_inicio'=>"afecha_inicio",'fecha_fin'=>"afecha_fin",'tipo'=>"atipo"]) }}';
+        url = url.replace('afecha_inicio', fecha_inicio);
+        url = url.replace('afecha_fin', fecha_fin);
+        url = url.replace('atipo', tipo);
+        url = url.replace(/&amp;/g, '&');
+      
+        $.get(url,{},function(data,status){
+            $("#tablita").html(data); 
+        });
+
+    }
+    function limpiarfiltros(){
+        document.getElementById("fecha_inicio").value="";
+        document.getElementById("fecha_fin").value="";
+        document.getElementById("tipo").value=0;
+        actualizarfiltros();
+    }
+
+      function descargarPDF(){
+
+        fecha_inicio = document.getElementById("fecha_inicio").value;
+        fecha_fin = document.getElementById("fecha_fin").value;
+        tipo = document.getElementById("tipo").value;
+        
+        var url = '{{ route("pdf.t.tres", ['fecha_inicio'=>"afecha_inicio",'fecha_fin'=>"afecha_fin",'tipo'=>"atipo"]) }}';
+        url = url.replace('afecha_inicio', fecha_inicio);
+        url = url.replace('afecha_fin', fecha_fin);
+        url = url.replace('atipo', tipo);
+        url = url.replace(/&amp;/g, '&');
+        url = url.replace(/&amp;/g, '&');
+     
+        document.location.href=url;
+         }
+</script>  
+
 
 

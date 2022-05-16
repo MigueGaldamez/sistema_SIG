@@ -4,17 +4,6 @@ use App\Http\Controllers\TacticosController;
 use App\Http\Controllers\EstrategicosController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 Route::get('/', function () {
     return view('auth.login');
 });
@@ -35,6 +24,14 @@ Route::get('/estrategicos-dos', [EstrategicosController::class, 'mostrarEstrateg
 Route::get('/filtrar-estrategicos-uno', [EstrategicosController::class, 'filtrarEstrategico1'])->name('filtrar.e.uno');
 Route::get('/filtrar-estrategicos-dos', [EstrategicosController::class, 'filtrarEstrategico2'])->name('filtrar.e.dos');
 
+Route::get('/filtrar-tacticos-uno', [TacticosController::class, 'filtrarTactico1'])->name('filtrar.t.uno');
+Route::get('/filtrar-tacticos-dos', [TacticosController::class, 'filtrarTactico2'])->name('filtrar.t.dos');
+Route::get('/filtrar-tacticos-tres', [TacticosController::class, 'filtrarTactico3'])->name('filtrar.t.tres');
+
+//PDF
+Route::get('/pdf-tacticos-uno', [TacticosController::class, 'pdfTactico1'])->name('pdf.t.uno');
+Route::get('/pdf-tacticos-dos', [TacticosController::class, 'pdfTactico2'])->name('pdf.t.dos');
+Route::get('/pdf-tacticos-tres', [TacticosController::class, 'pdfTactico3'])->name('pdf.t.tres');
 
 
 Route::middleware([
