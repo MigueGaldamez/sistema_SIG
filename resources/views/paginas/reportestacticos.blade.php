@@ -9,7 +9,7 @@
                     <div class="col">
                         <div class="card">
                             <div class="card-body">
-                                   <span>Cantidad de servicios sociales que han sido finalizados ordenados por su tipo mostrando la cantidad de alumnos que participaron en el servicio social.</span>
+                                   <span>Cantidad de alumnos que están realizando su servicio social por facultad. (Detalle de los servicios, carrera y cantidad de alumnos por servicio).</span>
                                    <br><a href="{{route('tacticos.uno')}}">Ver reporte</a>
                                     <div class="text-center">
                                     <img  class="mx-auto" src="{{asset('iconos/crecimiento (2).png')}}" style="height:200px;">
@@ -21,7 +21,7 @@
                       <div class="col">
                         <div class="card">
                             <div class="card-body">
-                                <span>Cantidad de alumnos que han terminado en su totalidad las horas mínimas (500 horas) de servicio social ordenado por sexo y filtrado por periodo.</span>
+                                <span>Reporte que muestre las instituciones que tienen servicios sociales activos o inactivos en un periodo determinado.</span>
                                 <br><a href="{{route('tacticos.dos')}}">Ver reporte</a>
                                 <div class="text-center">
                                     <img  class="mx-auto" src="{{asset('iconos/crecimiento.png')}}" style="height:200px;">
