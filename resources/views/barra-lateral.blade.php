@@ -54,7 +54,8 @@
 
                 
 			</div>
-          
+           <h5 class="text-center mb-0"><a href="{{route('admin.bitacora')}}">Bitacora<a></h5>
+
 		</div>
 		  <a class="flex items-center justify-center w-full h-16 mt-auto perfilsidebar" href="#">
 			<svg class="w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">

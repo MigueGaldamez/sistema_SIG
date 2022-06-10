@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\TacticosController;
 use App\Http\Controllers\EstrategicosController;
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -36,6 +37,8 @@ Route::get('/pdf-tacticos-tres', [TacticosController::class, 'pdfTactico3'])->na
 
 Route::get('/pdf-estrategico-uno', [EstrategicosController::class, 'pdfEstrategico1'])->name('pdf.e.uno');
 Route::get('/pdf-estrategico-dos', [EstrategicosController::class, 'pdfEstrategico2'])->name('pdf.e.dos');
+
+Route::get('/admin-bitacora', [AdminController::class, 'adminBitacora'])->name('admin.bitacora');
 
 Route::middleware([
     'auth:sanctum',
